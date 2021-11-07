@@ -291,7 +291,6 @@ def playCards():
             playcards.append(newcard)
             deckplayeradd(dro,playcards)
             cardontop=str(dro)
-            print(cardontop)
             shufflepile.append(cardontop)
             if (cardontop in lst):
                 lst.remove(cardontop)
@@ -316,7 +315,7 @@ def playCards():
             break
 
         print("The computer is currently taking it's turn")
-        print(compcards)
+
         compturn=computerdecide(cardontop,compcards,compheart,compspade,compclub,compdiamond,lst)
         compcards=compturn[0]
         cardontop=compturn[1]
@@ -327,7 +326,6 @@ def playCards():
         win=checkcompwin(compheart,compclub,compspade,compdiamond,compcards)
         if (win == True):
             break
-        print(compcards)
         print("The current card on top is: ",cardontop)
         print("Your cards are: ",playcards)
         print("Would you like to draw from the deck or pile?")
