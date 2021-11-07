@@ -1,5 +1,7 @@
 
 import random
+import time
+from main import game
 
 def rules(x,cardslist):
     if(x=='Yes'):
@@ -10,10 +12,10 @@ def rules(x,cardslist):
           "If you do not have 31, you may draw a random card from the deck, or pick up the card your opponent discarded \n"
           "If you have close to 31 or believe you have higher than the computer, you may knock \n"
           "When someone knocks, the other player gets one more turn, and then whoever had the highest value wins \n"
-          "To knock type 'knock \n'"
+          "To knock type 'knock' \n"
           "To select a new card you may type either 'pile' to take your opponents rejected card or 'deck' to draw a new card from the deck \n"
-          "However you must then drop a card by typing 'drop 'cardname' before you may end your turn"
-          "the card names and values are as follows: \n",
+          "However you must then drop a card by typing 'drop 'cardname' before you may end your turn\n"
+          "The card names and values are as follows: \n",
           cardslist)
     elif(x=="No"):
         return
@@ -232,8 +234,9 @@ def playCards():
     print("Do you need to see the rules? Type 'Yes' or 'No'")
     x = input()
     runrules(x,cardslist)
+    print("The game will automatically begin in 30 seconds")
+    time.sleep(30)
     # rules(x,cardslist)
-    print("Ready to play?")
     print("You will always have the first move")
     playcards = initcar[0]
     print("Your cards are: ")
@@ -341,7 +344,7 @@ def playCards():
 
 
 
-
-playCards()
+if(game=="Thirty One"):
+    playCards()
 
 
